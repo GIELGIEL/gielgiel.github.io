@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #f4d679;
+}
+
+.Menu {
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+}
+
+.title {
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 35px;
+  padding: 0px 16px;
+  position: static;
+}
+
+.navbar {
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  padding: 1cm 16px;
+  position: static;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  z-index: 99999;
+}
+
+.tekst {
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  padding: 0px 16px;
+  position: static;
+}
+
+body {
+  padding: 10px;
+  margin: 0;
+  font-family: 'Roboto Slab', serif;
+}
+
+ul {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  background-color: #e35a3e;
+  top: 0px;
+  z-index: 1000;
+  border-radius: 0.5cm;
+
+  @media screen and (min-width: 400px) {
+    position: sticky;
+  }
+}
+
+.helebar {}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #ab3218;
+}
+
+@media screen and (max-width: 400px) {
+
+  ul li.right,
+  ul li {
+    float: none;
+  }
+
+  position: static;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 5cm;
+  height: 2cm;
+  margin-top: 4px;
+
+  @media screen and (min-width: 700px) {
+    float: right;
+    display: block;
+  }
+
+  @media screen and (max-width: 700px) {
+    display: none;
+  }
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  padding: 0px 16px;
+  position: static;
+  width: 100%;
+  table-layout: fixed;
+  font-size: 15px;
+  overflow: hidden;
+  background-color: ;
+  -webkit-text-stroke-width: 0px;
+  color: black;
+  font-weight: 500;
+  z-index: 1;
+}
+
+table,
+th,
+td:hover {
+  overflow: visible;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: black;
+  font-size: 17px;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.tabel {
+  width: 100%;
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+  padding: 0px 16px;
+  position: relative;
+  table-layout: fixed;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #e35a3e;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #e35a3e;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+
+.blogfoto {
+  float: left;
+  height: 300px;
+}
+
+.blogitem {
+  padding: 5px 16px;
+  margin-right: 5px;
+  color: black;
+  text-decoration: none;
+  float: left;
+  width: 100%
+}
+
+.nieuwsfoto {
+  float: left;
+  height: 300px;
+}
+
+.nieuwsfotoheadline {
+  padding: -10px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nieuwsitem {
+  padding: 5px 16px;
+  margin-right: 5px;
+  color: black;
+  text-decoration: none;
+  float: left;
+  width: 100%
+}
+
+.nieuwsheadline {
+  margin: 0 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  height: 800px;
+}
+
+.header2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  padding: 0px 0px;
+  margin: 0px;
+}
+
+.headlinetekst {
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  padding: 0px 0px;
+  text-align: center;
+}
+
+.terugknop {
+  float: right;
+  background-color: #e35a3e;
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  padding: 0px 16px;
+  position: static;
+  color: white;
+  border-radius: 2px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+.knoppie {
+  background-color: #e35a3e;
+  margin: 0px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 20px;
+  padding: 0px 16px;
+  position: static;
+  color: white;
+  border-radius: 2px;
+  border-top: 0px;
+  border-left: 0px;
+  border-bottom: 0px;
+  border-right: 0px;
+}
+
+.terugknop:hover {
+  background-color: white;
+  color: #e35a3e;
+}
+
+.knoppie:hover {
+  background-color: white;
+  color: #e35a3e;
+}
+
+.icoon {
+  display: inline;
+  height: 30px;
+}
+
+.contact {
+  display: inline;
+}
+
+.koopwaar {
+  padding: 0;
+  margin-right: 5px;
+  color: black;
+  text-decoration: none;
+  float: left;
+  width: 300px;
+  height: 300px;
+  overflow: clip;
+}
+
+.koopwaarfoto {
+  padding: 0;
+  margin-right: 5px;
+  color: black;
+  text-decoration: none;
+  float: left;
+  width: 300px;
+  overflow: hidden;
+}
+
+.fotorand {
+  height: 200px;
+  overflow: hidden;
+}
+
+.koopfoto {
+  width: 400px;
+  float: left;
+}
+
+.inhoudsopgave {
+  float: left;
+  width: 200px;
+  height: auto;
+  background-color: #e35a3e;
+  border-color: black;
+  border-style: solid;
+  border-radius: 0.5cm;
+  color: white;
+}
+
+.rondje {
+  list-style-type: disc;
+  margin-left: 10px;
+  background-color: transparent;
+}
+
+audio {
+  display: none;
+}
+
+.artstyle {
+  display: inline;
+  height: 400px;
+}
+.infoto {
+  height: 150px;
+  float:right
+}

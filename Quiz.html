@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quiz</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js">
+  </script>
+  <script src="sounds.js" type="text/javascript"></script>
+  <link rel="icon" href="/Afbeeldingen/logo/patmat.ico">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Quiz Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <h2>Quiz</h2>
+  <form>
+    <h3>Question 1</h3>
+    <p>Hoe heten buurman en Buurman?</p>
+    <input type="radio" id="Pat en Mat" name="naam" value="Pat en Mat">
+    <label for="Pat en Mat">Pat en Mat</label><br>
+    <input type="radio" id="Jan en Jan" name="naam" value="Jan en Jan">
+    <label for="Jan en jan">Jan en Jan</label><br>
+    <input type="radio" id="Diederick en Roderick" name="naam" value="Diederick en Roderick">
+    <label for="Diedrick en Roderick">Diederick en Roderick</label><br><br>
+    <input class="knoppie" type="submit" value=">>>">
+    <p id="result1"></p>
+    <script>
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const answer1 = document.querySelector('input[name="naam"]:checked').value;
+        if (answer1 === "Pat en Mat") {
+          document.getElementById('result1').innerText = "Goed zo!";
+        } else {
+          document.getElementById('result1').innerText = "Jammer, probeer het nog eens.";
+        }
+      });
+    </script>
+
+    <h3>Vraag 2</h3>
+    <p>Wanneer kwam de eerste aflevering uit?</p>
+    <input type="radio" id="1990" name="jaar" value="1990">
+    <label for="1990">1990</label><br>
+    <input type="radio" id="1976" name="jaar" value="1976">
+    <label for="1976">1976</label><br>
+    <input type="radio" id="1983" name="jaar" value="1983">
+    <label for="1983">1983</label><br><br>
+    <input class="knoppie" type="submit" value=">>>">
+    <p id="result2"></p>
+
+    <script>
+      const form2 = document.querySelector('form');
+      form2.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const answer2 = document.querySelector('input[name="jaar"]:checked').value;
+        if (answer2 === "1976") {
+          document.getElementById('result2').innerText = "Goed zo!";
+        } else {
+          document.getElementById('result2').innerText = "Jammer, probeer het nog eens.";
+        }
+      });
+    </script>
+
+    <h3>Vraag 3</h3>
+    <p>Wat zeggen buurman en buurman altijd als iets gelukt is?</p>
+    <input type="radio" id="A je to" name="gezegde" value="A je to">
+    <label for="A je to">A je to</label><br>
+    <input type="radio" id="Lekker maat" name="gezegde" value="Lekker maat">
+    <label for="Lekker maat">Lekker maat</label><br>
+    <input type="radio" id="Mooi man" name="gezegde" value="Mooi man">
+    <label for="Mooi man">Mooi man</label><br><br>
+    <input class="knoppie" type="submit" value=">>>">
+    <p id="result3"></p>
+
+
+    <script>
+      const form3 = document.querySelector('form');
+      form3.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const answer3 = document.querySelector('input[name="gezegde"]:checked').value;
+        if (answer3 === "A je to") {
+          document.getElementById('result3').innerText = "Goed zo!";
+        } else {
+          document.getElementById('result3').innerText = "Jammer, probeer het nog eens.";
+        }
+      });
+    </script>
+
+    <h3>Vraag 4</h3>
+    <p>Uit welk land komen Buurman en Buurman</p>
+    <input type="radio" id="Nederland" name="land" value="Nederland">
+    <label for="Nederland">Nederland</label><br>
+    <input type="radio" id="Polen" name="land" value="Polen">
+    <label for="Polen">Polen</label><br>
+    <input type="radio" id="Tsjechië" name="land" value="Tsjechië">
+    <label for="Tsjechië">Tsjechië</label><br><br>
+    <input class="knoppie" type="submit" value=">>>">
+    <p id="result4"></p>
+
+
+    <script>
+      const form4 = document.querySelector('form');
+      form4.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const answer4 = document.querySelector('input[name="land"]:checked').value;
+        if (answer4 === "Tsjechië") {
+          document.getElementById('result4').innerText = "Goed zo!";
+        } else {
+          document.getElementById('result4').innerText = "Jammer, probeer het nog eens.";
+        }
+      });
+    </script>
+
+  </form>
+</body>
+
+</html>
